@@ -34,6 +34,11 @@ public class PlayerControls : MonoBehaviour
             jumpCount--;
         }
 
+        if(playerRB.position.y < -1.0f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
